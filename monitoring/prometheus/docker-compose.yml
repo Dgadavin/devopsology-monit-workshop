@@ -81,7 +81,9 @@ services:
     restart: always
 
   grafana:
-    image: grafana/grafana
+    build:
+      context: grafana
+      dockerfile: Dockerfile.grafana
     user: "104"
     depends_on:
       - prometheus

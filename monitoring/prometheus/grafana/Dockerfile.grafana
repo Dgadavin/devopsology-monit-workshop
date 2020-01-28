@@ -1,0 +1,4 @@
+FROM grafana/grafana:6.4.5
+RUN grafana-cli plugins install vonage-status-panel
+
+EXPOSE 3000
