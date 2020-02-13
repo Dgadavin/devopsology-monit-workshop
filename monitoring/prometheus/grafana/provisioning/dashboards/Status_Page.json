@@ -1,0 +1,1064 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "links": [],
+  "panels": [
+    {
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 23,
+      "title": "Databases",
+      "type": "row"
+    },
+    {
+      "clusterName": "Grafana CPU",
+      "colorMode": "Panel",
+      "colors": {
+        "crit": "rgba(245, 54, 54, 0.9)",
+        "disable": "rgba(128, 128, 128, 0.9)",
+        "ok": "rgba(50, 128, 45, 0.9)",
+        "warn": "rgba(237, 129, 40, 0.9)"
+      },
+      "cornerRadius": 0,
+      "datasource": null,
+      "displayName": "Grafana CPU",
+      "flipCard": false,
+      "flipTime": 5,
+      "fontFormat": "Regular",
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 0,
+        "y": 1
+      },
+      "id": 5,
+      "isAutoScrollOnOverflow": false,
+      "isGrayOnNoData": false,
+      "isHideAlertsOnDisable": false,
+      "isIgnoreOKColors": false,
+      "links": [
+        {
+          "title": "Detailed dashboard",
+          "url": "http://54.82.186.94:3000/d/2zAiyzwWz/docker-monitoring"
+        }
+      ],
+      "options": {},
+      "targets": [
+        {
+          "aggregation": "Last",
+          "alias": "CPU",
+          "crit": 20,
+          "decimals": 2,
+          "displayAliasType": "Always",
+          "displayType": "Regular",
+          "displayValueWithAlias": "Warning / Critical",
+          "expr": "rate(container_cpu_user_seconds_total{image=\"prometheus_grafana\"}[5m]) * 100",
+          "legendFormat": "{{CPU}}",
+          "refId": "A",
+          "units": "none",
+          "valueHandler": "Number Threshold",
+          "warn": 2
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Backend DB",
+      "type": "vonage-status-panel"
+    },
+    {
+      "clusterName": "Grafana CPU",
+      "colorMode": "Panel",
+      "colors": {
+        "crit": "rgba(245, 54, 54, 0.9)",
+        "disable": "rgba(128, 128, 128, 0.9)",
+        "ok": "rgba(50, 128, 45, 0.9)",
+        "warn": "rgba(237, 129, 40, 0.9)"
+      },
+      "cornerRadius": 0,
+      "datasource": null,
+      "displayName": "Grafana CPU",
+      "flipCard": false,
+      "flipTime": 5,
+      "fontFormat": "Regular",
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 4,
+        "y": 1
+      },
+      "id": 6,
+      "isAutoScrollOnOverflow": false,
+      "isGrayOnNoData": false,
+      "isHideAlertsOnDisable": false,
+      "isIgnoreOKColors": false,
+      "links": [
+        {
+          "title": "Detailed dashboard",
+          "url": "http://54.82.186.94:3000/d/2zAiyzwWz/docker-monitoring"
+        }
+      ],
+      "options": {},
+      "targets": [
+        {
+          "aggregation": "Last",
+          "alias": "CPU",
+          "crit": 20,
+          "decimals": 2,
+          "displayAliasType": "Always",
+          "displayType": "Regular",
+          "displayValueWithAlias": "Warning / Critical",
+          "expr": "rate(container_cpu_user_seconds_total{image=\"prometheus_grafana\"}[5m]) * 100",
+          "legendFormat": "{{CPU}}",
+          "refId": "A",
+          "units": "none",
+          "valueHandler": "Number Threshold",
+          "warn": 2
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Frontend DB",
+      "type": "vonage-status-panel"
+    },
+    {
+      "clusterName": "Grafana CPU",
+      "colorMode": "Panel",
+      "colors": {
+        "crit": "rgba(245, 54, 54, 0.9)",
+        "disable": "rgba(128, 128, 128, 0.9)",
+        "ok": "rgba(50, 128, 45, 0.9)",
+        "warn": "rgba(237, 129, 40, 0.9)"
+      },
+      "cornerRadius": 0,
+      "datasource": null,
+      "displayName": "Grafana CPU",
+      "flipCard": false,
+      "flipTime": 5,
+      "fontFormat": "Regular",
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 8,
+        "y": 1
+      },
+      "id": 12,
+      "isAutoScrollOnOverflow": false,
+      "isGrayOnNoData": false,
+      "isHideAlertsOnDisable": false,
+      "isIgnoreOKColors": false,
+      "links": [
+        {
+          "title": "Detailed dashboard",
+          "url": "http://54.82.186.94:3000/d/2zAiyzwWz/docker-monitoring"
+        }
+      ],
+      "options": {},
+      "targets": [
+        {
+          "aggregation": "Last",
+          "alias": "CPU",
+          "crit": 1,
+          "decimals": 2,
+          "displayAliasType": "Always",
+          "displayType": "Regular",
+          "displayValueWithAlias": "Warning / Critical",
+          "expr": "rate(container_cpu_user_seconds_total{image=\"prometheus_grafana\"}[5m]) * 100",
+          "legendFormat": "{{CPU}}",
+          "refId": "A",
+          "units": "none",
+          "valueHandler": "Number Threshold",
+          "warn": 1
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Jira DB",
+      "type": "vonage-status-panel"
+    },
+    {
+      "clusterName": "Grafana CPU",
+      "colorMode": "Panel",
+      "colors": {
+        "crit": "rgba(245, 54, 54, 0.9)",
+        "disable": "rgba(128, 128, 128, 0.9)",
+        "ok": "rgba(50, 128, 45, 0.9)",
+        "warn": "rgba(237, 129, 40, 0.9)"
+      },
+      "cornerRadius": 0,
+      "datasource": null,
+      "displayName": "Grafana CPU",
+      "flipCard": false,
+      "flipTime": 5,
+      "fontFormat": "Regular",
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 12,
+        "y": 1
+      },
+      "id": 7,
+      "isAutoScrollOnOverflow": false,
+      "isGrayOnNoData": false,
+      "isHideAlertsOnDisable": false,
+      "isIgnoreOKColors": false,
+      "links": [
+        {
+          "title": "Detailed dashboard",
+          "url": "http://54.82.186.94:3000/d/2zAiyzwWz/docker-monitoring"
+        }
+      ],
+      "options": {},
+      "targets": [
+        {
+          "aggregation": "Last",
+          "alias": "CPU",
+          "crit": 20,
+          "decimals": 2,
+          "displayAliasType": "Always",
+          "displayType": "Regular",
+          "displayValueWithAlias": "Warning / Critical",
+          "expr": "rate(container_cpu_user_seconds_total{image=\"prometheus_grafana\"}[5m]) * 100",
+          "legendFormat": "{{CPU}}",
+          "refId": "A",
+          "units": "none",
+          "valueHandler": "Number Threshold",
+          "warn": 2
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Grafana DB",
+      "type": "vonage-status-panel"
+    },
+    {
+      "clusterName": "Grafana CPU",
+      "colorMode": "Panel",
+      "colors": {
+        "crit": "rgba(245, 54, 54, 0.9)",
+        "disable": "rgba(128, 128, 128, 0.9)",
+        "ok": "rgba(50, 128, 45, 0.9)",
+        "warn": "rgba(237, 129, 40, 0.9)"
+      },
+      "cornerRadius": 0,
+      "datasource": null,
+      "displayName": "Grafana CPU",
+      "flipCard": false,
+      "flipTime": 5,
+      "fontFormat": "Regular",
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 16,
+        "y": 1
+      },
+      "id": 15,
+      "isAutoScrollOnOverflow": false,
+      "isGrayOnNoData": false,
+      "isHideAlertsOnDisable": false,
+      "isIgnoreOKColors": false,
+      "links": [
+        {
+          "title": "Detailed dashboard",
+          "url": "http://54.82.186.94:3000/d/2zAiyzwWz/docker-monitoring"
+        }
+      ],
+      "options": {},
+      "targets": [
+        {
+          "aggregation": "Last",
+          "alias": "CPU",
+          "crit": 20,
+          "decimals": 2,
+          "displayAliasType": "Always",
+          "displayType": "Regular",
+          "displayValueWithAlias": "Warning / Critical",
+          "expr": "rate(container_cpu_user_seconds_total{image=\"prometheus_grafana\"}[5m]) * 100",
+          "legendFormat": "{{CPU}}",
+          "refId": "A",
+          "units": "none",
+          "valueHandler": "Number Threshold",
+          "warn": 2
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Service A DB",
+      "type": "vonage-status-panel"
+    },
+    {
+      "clusterName": "Grafana CPU",
+      "colorMode": "Panel",
+      "colors": {
+        "crit": "rgba(245, 54, 54, 0.9)",
+        "disable": "rgba(128, 128, 128, 0.9)",
+        "ok": "rgba(50, 128, 45, 0.9)",
+        "warn": "rgba(237, 129, 40, 0.9)"
+      },
+      "cornerRadius": 0,
+      "datasource": null,
+      "displayName": "Grafana CPU",
+      "flipCard": false,
+      "flipTime": 5,
+      "fontFormat": "Regular",
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 20,
+        "y": 1
+      },
+      "id": 16,
+      "isAutoScrollOnOverflow": false,
+      "isGrayOnNoData": false,
+      "isHideAlertsOnDisable": false,
+      "isIgnoreOKColors": false,
+      "links": [
+        {
+          "title": "Detailed dashboard",
+          "url": "http://54.82.186.94:3000/d/2zAiyzwWz/docker-monitoring"
+        }
+      ],
+      "options": {},
+      "targets": [
+        {
+          "aggregation": "Last",
+          "alias": "CPU",
+          "crit": 20,
+          "decimals": 2,
+          "displayAliasType": "Always",
+          "displayType": "Regular",
+          "displayValueWithAlias": "Warning / Critical",
+          "expr": "rate(container_cpu_user_seconds_total{image=\"prometheus_grafana\"}[5m]) * 100",
+          "legendFormat": "{{CPU}}",
+          "refId": "A",
+          "units": "none",
+          "valueHandler": "Number Threshold",
+          "warn": 2
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Service B DB",
+      "type": "vonage-status-panel"
+    },
+    {
+      "collapsed": false,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 7
+      },
+      "id": 21,
+      "panels": [],
+      "title": "Application server",
+      "type": "row"
+    },
+    {
+      "clusterName": "Grafana CPU",
+      "colorMode": "Panel",
+      "colors": {
+        "crit": "rgba(245, 54, 54, 0.9)",
+        "disable": "rgba(128, 128, 128, 0.9)",
+        "ok": "rgba(50, 128, 45, 0.9)",
+        "warn": "rgba(237, 129, 40, 0.9)"
+      },
+      "cornerRadius": 0,
+      "datasource": null,
+      "displayName": "Grafana CPU",
+      "flipCard": false,
+      "flipTime": 5,
+      "fontFormat": "Regular",
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 0,
+        "y": 8
+      },
+      "id": 2,
+      "isAutoScrollOnOverflow": false,
+      "isGrayOnNoData": false,
+      "isHideAlertsOnDisable": false,
+      "isIgnoreOKColors": false,
+      "links": [
+        {
+          "title": "Detailed dashboard",
+          "url": "http://54.82.186.94:3000/d/2zAiyzwWz/docker-monitoring"
+        }
+      ],
+      "options": {},
+      "targets": [
+        {
+          "aggregation": "Last",
+          "alias": "CPU",
+          "crit": 20,
+          "decimals": 2,
+          "displayAliasType": "Always",
+          "displayType": "Regular",
+          "displayValueWithAlias": "Warning / Critical",
+          "expr": "rate(container_cpu_user_seconds_total{image=\"prometheus_grafana\"}[5m]) * 100",
+          "legendFormat": "{{CPU}}",
+          "refId": "A",
+          "units": "none",
+          "valueHandler": "Number Threshold",
+          "warn": 1
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Grafana CPU",
+      "type": "vonage-status-panel"
+    },
+    {
+      "clusterName": "Grafana CPU",
+      "colorMode": "Panel",
+      "colors": {
+        "crit": "rgba(245, 54, 54, 0.9)",
+        "disable": "rgba(128, 128, 128, 0.9)",
+        "ok": "rgba(50, 128, 45, 0.9)",
+        "warn": "rgba(237, 129, 40, 0.9)"
+      },
+      "cornerRadius": 0,
+      "datasource": null,
+      "displayName": "Grafana CPU",
+      "flipCard": false,
+      "flipTime": 5,
+      "fontFormat": "Regular",
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 4,
+        "y": 8
+      },
+      "id": 3,
+      "isAutoScrollOnOverflow": false,
+      "isGrayOnNoData": false,
+      "isHideAlertsOnDisable": false,
+      "isIgnoreOKColors": false,
+      "links": [
+        {
+          "title": "Detailed dashboard",
+          "url": "http://54.82.186.94:3000/d/2zAiyzwWz/docker-monitoring"
+        }
+      ],
+      "options": {},
+      "targets": [
+        {
+          "aggregation": "Last",
+          "alias": "CPU",
+          "crit": 20,
+          "decimals": 2,
+          "displayAliasType": "Always",
+          "displayType": "Regular",
+          "displayValueWithAlias": "Warning / Critical",
+          "expr": "rate(container_cpu_user_seconds_total{image=\"prometheus_grafana\"}[5m]) * 100",
+          "legendFormat": "{{CPU}}",
+          "refId": "A",
+          "units": "none",
+          "valueHandler": "Number Threshold",
+          "warn": 2
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Grafana CPU",
+      "type": "vonage-status-panel"
+    },
+    {
+      "clusterName": "Grafana CPU",
+      "colorMode": "Panel",
+      "colors": {
+        "crit": "rgba(245, 54, 54, 0.9)",
+        "disable": "rgba(128, 128, 128, 0.9)",
+        "ok": "rgba(50, 128, 45, 0.9)",
+        "warn": "rgba(237, 129, 40, 0.9)"
+      },
+      "cornerRadius": 0,
+      "datasource": null,
+      "displayName": "Grafana CPU",
+      "flipCard": false,
+      "flipTime": 5,
+      "fontFormat": "Regular",
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 8,
+        "y": 8
+      },
+      "id": 4,
+      "isAutoScrollOnOverflow": false,
+      "isGrayOnNoData": false,
+      "isHideAlertsOnDisable": false,
+      "isIgnoreOKColors": false,
+      "links": [
+        {
+          "title": "Detailed dashboard",
+          "url": "http://54.82.186.94:3000/d/2zAiyzwWz/docker-monitoring"
+        }
+      ],
+      "options": {},
+      "targets": [
+        {
+          "aggregation": "Last",
+          "alias": "CPU",
+          "crit": 20,
+          "decimals": 2,
+          "displayAliasType": "Always",
+          "displayType": "Regular",
+          "displayValueWithAlias": "Warning / Critical",
+          "expr": "rate(container_cpu_user_seconds_total{image=\"prometheus_grafana\"}[5m]) * 100",
+          "legendFormat": "{{CPU}}",
+          "refId": "A",
+          "units": "none",
+          "valueHandler": "Number Threshold",
+          "warn": 2
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Grafana CPU",
+      "type": "vonage-status-panel"
+    },
+    {
+      "clusterName": "Grafana CPU",
+      "colorMode": "Panel",
+      "colors": {
+        "crit": "rgba(245, 54, 54, 0.9)",
+        "disable": "rgba(128, 128, 128, 0.9)",
+        "ok": "rgba(50, 128, 45, 0.9)",
+        "warn": "rgba(237, 129, 40, 0.9)"
+      },
+      "cornerRadius": 0,
+      "datasource": null,
+      "displayName": "Grafana CPU",
+      "flipCard": false,
+      "flipTime": 5,
+      "fontFormat": "Regular",
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 12,
+        "y": 8
+      },
+      "id": 10,
+      "isAutoScrollOnOverflow": false,
+      "isGrayOnNoData": false,
+      "isHideAlertsOnDisable": false,
+      "isIgnoreOKColors": false,
+      "links": [
+        {
+          "title": "Detailed dashboard",
+          "url": "http://54.82.186.94:3000/d/2zAiyzwWz/docker-monitoring"
+        }
+      ],
+      "options": {},
+      "targets": [
+        {
+          "aggregation": "Last",
+          "alias": "CPU",
+          "crit": 1,
+          "decimals": 2,
+          "displayAliasType": "Always",
+          "displayType": "Regular",
+          "displayValueWithAlias": "Warning / Critical",
+          "expr": "rate(container_cpu_user_seconds_total{image=\"prometheus_grafana\"}[5m]) * 100",
+          "legendFormat": "{{CPU}}",
+          "refId": "A",
+          "units": "none",
+          "valueHandler": "Number Threshold",
+          "warn": 1
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Grafana CPU",
+      "type": "vonage-status-panel"
+    },
+    {
+      "clusterName": "Grafana CPU",
+      "colorMode": "Panel",
+      "colors": {
+        "crit": "rgba(245, 54, 54, 0.9)",
+        "disable": "rgba(128, 128, 128, 0.9)",
+        "ok": "rgba(50, 128, 45, 0.9)",
+        "warn": "rgba(237, 129, 40, 0.9)"
+      },
+      "cornerRadius": 0,
+      "datasource": null,
+      "displayName": "Grafana CPU",
+      "flipCard": false,
+      "flipTime": 5,
+      "fontFormat": "Regular",
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 16,
+        "y": 8
+      },
+      "id": 11,
+      "isAutoScrollOnOverflow": false,
+      "isGrayOnNoData": false,
+      "isHideAlertsOnDisable": false,
+      "isIgnoreOKColors": false,
+      "links": [
+        {
+          "title": "Detailed dashboard",
+          "url": "http://54.82.186.94:3000/d/2zAiyzwWz/docker-monitoring"
+        }
+      ],
+      "options": {},
+      "targets": [
+        {
+          "aggregation": "Last",
+          "alias": "CPU",
+          "crit": 20,
+          "decimals": 2,
+          "displayAliasType": "Always",
+          "displayType": "Regular",
+          "displayValueWithAlias": "Warning / Critical",
+          "expr": "rate(container_cpu_user_seconds_total{image=\"prometheus_grafana\"}[5m]) * 100",
+          "legendFormat": "{{CPU}}",
+          "refId": "A",
+          "units": "none",
+          "valueHandler": "Number Threshold",
+          "warn": 2
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Grafana CPU",
+      "type": "vonage-status-panel"
+    },
+    {
+      "clusterName": "Grafana CPU",
+      "colorMode": "Panel",
+      "colors": {
+        "crit": "rgba(245, 54, 54, 0.9)",
+        "disable": "rgba(128, 128, 128, 0.9)",
+        "ok": "rgba(50, 128, 45, 0.9)",
+        "warn": "rgba(237, 129, 40, 0.9)"
+      },
+      "cornerRadius": 0,
+      "datasource": null,
+      "displayName": "Grafana CPU",
+      "flipCard": false,
+      "flipTime": 5,
+      "fontFormat": "Regular",
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 20,
+        "y": 8
+      },
+      "id": 13,
+      "isAutoScrollOnOverflow": false,
+      "isGrayOnNoData": false,
+      "isHideAlertsOnDisable": false,
+      "isIgnoreOKColors": false,
+      "links": [
+        {
+          "title": "Detailed dashboard",
+          "url": "http://54.82.186.94:3000/d/2zAiyzwWz/docker-monitoring"
+        }
+      ],
+      "options": {},
+      "targets": [
+        {
+          "aggregation": "Last",
+          "alias": "CPU",
+          "crit": 20,
+          "decimals": 2,
+          "displayAliasType": "Always",
+          "displayType": "Regular",
+          "displayValueWithAlias": "Warning / Critical",
+          "expr": "rate(container_cpu_user_seconds_total{image=\"prometheus_grafana\"}[5m]) * 100",
+          "legendFormat": "{{CPU}}",
+          "refId": "A",
+          "units": "none",
+          "valueHandler": "Number Threshold",
+          "warn": 2
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Grafana CPU",
+      "type": "vonage-status-panel"
+    },
+    {
+      "clusterName": "Grafana CPU",
+      "colorMode": "Panel",
+      "colors": {
+        "crit": "rgba(245, 54, 54, 0.9)",
+        "disable": "rgba(128, 128, 128, 0.9)",
+        "ok": "rgba(50, 128, 45, 0.9)",
+        "warn": "rgba(237, 129, 40, 0.9)"
+      },
+      "cornerRadius": 0,
+      "datasource": null,
+      "displayName": "Grafana CPU",
+      "flipCard": false,
+      "flipTime": 5,
+      "fontFormat": "Regular",
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 0,
+        "y": 14
+      },
+      "id": 8,
+      "isAutoScrollOnOverflow": false,
+      "isGrayOnNoData": false,
+      "isHideAlertsOnDisable": false,
+      "isIgnoreOKColors": false,
+      "links": [
+        {
+          "title": "Detailed dashboard",
+          "url": "http://54.82.186.94:3000/d/2zAiyzwWz/docker-monitoring"
+        }
+      ],
+      "options": {},
+      "targets": [
+        {
+          "aggregation": "Last",
+          "alias": "CPU",
+          "crit": 20,
+          "decimals": 2,
+          "displayAliasType": "Always",
+          "displayType": "Regular",
+          "displayValueWithAlias": "Warning / Critical",
+          "expr": "rate(container_cpu_user_seconds_total{image=\"prometheus_grafana\"}[5m]) * 100",
+          "legendFormat": "{{CPU}}",
+          "refId": "A",
+          "units": "none",
+          "valueHandler": "Number Threshold",
+          "warn": 2
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Grafana CPU",
+      "type": "vonage-status-panel"
+    },
+    {
+      "clusterName": "Grafana CPU",
+      "colorMode": "Panel",
+      "colors": {
+        "crit": "rgba(245, 54, 54, 0.9)",
+        "disable": "rgba(128, 128, 128, 0.9)",
+        "ok": "rgba(50, 128, 45, 0.9)",
+        "warn": "rgba(237, 129, 40, 0.9)"
+      },
+      "cornerRadius": 0,
+      "datasource": null,
+      "displayName": "Grafana CPU",
+      "flipCard": false,
+      "flipTime": 5,
+      "fontFormat": "Regular",
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 4,
+        "y": 14
+      },
+      "id": 14,
+      "isAutoScrollOnOverflow": false,
+      "isGrayOnNoData": false,
+      "isHideAlertsOnDisable": false,
+      "isIgnoreOKColors": false,
+      "links": [
+        {
+          "title": "Detailed dashboard",
+          "url": "http://54.82.186.94:3000/d/2zAiyzwWz/docker-monitoring"
+        }
+      ],
+      "options": {},
+      "targets": [
+        {
+          "aggregation": "Last",
+          "alias": "CPU",
+          "crit": 20,
+          "decimals": 2,
+          "displayAliasType": "Always",
+          "displayType": "Regular",
+          "displayValueWithAlias": "Warning / Critical",
+          "expr": "rate(container_cpu_user_seconds_total{image=\"prometheus_grafana\"}[5m]) * 100",
+          "legendFormat": "{{CPU}}",
+          "refId": "A",
+          "units": "none",
+          "valueHandler": "Number Threshold",
+          "warn": 2
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Grafana CPU",
+      "type": "vonage-status-panel"
+    },
+    {
+      "clusterName": "Grafana CPU",
+      "colorMode": "Panel",
+      "colors": {
+        "crit": "rgba(245, 54, 54, 0.9)",
+        "disable": "rgba(128, 128, 128, 0.9)",
+        "ok": "rgba(50, 128, 45, 0.9)",
+        "warn": "rgba(237, 129, 40, 0.9)"
+      },
+      "cornerRadius": 0,
+      "datasource": null,
+      "displayName": "Grafana CPU",
+      "flipCard": false,
+      "flipTime": 5,
+      "fontFormat": "Regular",
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 8,
+        "y": 14
+      },
+      "id": 9,
+      "isAutoScrollOnOverflow": false,
+      "isGrayOnNoData": false,
+      "isHideAlertsOnDisable": false,
+      "isIgnoreOKColors": false,
+      "links": [
+        {
+          "title": "Detailed dashboard",
+          "url": "http://54.82.186.94:3000/d/2zAiyzwWz/docker-monitoring"
+        }
+      ],
+      "options": {},
+      "targets": [
+        {
+          "aggregation": "Last",
+          "alias": "CPU",
+          "crit": 20,
+          "decimals": 2,
+          "displayAliasType": "Always",
+          "displayType": "Regular",
+          "displayValueWithAlias": "Warning / Critical",
+          "expr": "rate(container_cpu_user_seconds_total{image=\"prometheus_grafana\"}[5m]) * 100",
+          "legendFormat": "{{CPU}}",
+          "refId": "A",
+          "units": "none",
+          "valueHandler": "Number Threshold",
+          "warn": 2
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Grafana CPU",
+      "type": "vonage-status-panel"
+    },
+    {
+      "clusterName": "Grafana CPU",
+      "colorMode": "Panel",
+      "colors": {
+        "crit": "rgba(245, 54, 54, 0.9)",
+        "disable": "rgba(128, 128, 128, 0.9)",
+        "ok": "rgba(50, 128, 45, 0.9)",
+        "warn": "rgba(237, 129, 40, 0.9)"
+      },
+      "cornerRadius": 0,
+      "datasource": null,
+      "displayName": "Grafana CPU",
+      "flipCard": false,
+      "flipTime": 5,
+      "fontFormat": "Regular",
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 12,
+        "y": 14
+      },
+      "id": 17,
+      "isAutoScrollOnOverflow": false,
+      "isGrayOnNoData": false,
+      "isHideAlertsOnDisable": false,
+      "isIgnoreOKColors": false,
+      "links": [
+        {
+          "title": "Detailed dashboard",
+          "url": "http://54.82.186.94:3000/d/2zAiyzwWz/docker-monitoring"
+        }
+      ],
+      "options": {},
+      "targets": [
+        {
+          "aggregation": "Last",
+          "alias": "CPU",
+          "crit": 20,
+          "decimals": 2,
+          "displayAliasType": "Always",
+          "displayType": "Regular",
+          "displayValueWithAlias": "Warning / Critical",
+          "expr": "rate(container_cpu_user_seconds_total{image=\"prometheus_grafana\"}[5m]) * 100",
+          "legendFormat": "{{CPU}}",
+          "refId": "A",
+          "units": "none",
+          "valueHandler": "Number Threshold",
+          "warn": 2
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Grafana CPU",
+      "type": "vonage-status-panel"
+    },
+    {
+      "clusterName": "Grafana CPU",
+      "colorMode": "Panel",
+      "colors": {
+        "crit": "rgba(245, 54, 54, 0.9)",
+        "disable": "rgba(128, 128, 128, 0.9)",
+        "ok": "rgba(50, 128, 45, 0.9)",
+        "warn": "rgba(237, 129, 40, 0.9)"
+      },
+      "cornerRadius": 0,
+      "datasource": null,
+      "displayName": "Grafana CPU",
+      "flipCard": false,
+      "flipTime": 5,
+      "fontFormat": "Regular",
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 16,
+        "y": 14
+      },
+      "id": 18,
+      "isAutoScrollOnOverflow": false,
+      "isGrayOnNoData": false,
+      "isHideAlertsOnDisable": false,
+      "isIgnoreOKColors": false,
+      "links": [
+        {
+          "title": "Detailed dashboard",
+          "url": "http://54.82.186.94:3000/d/2zAiyzwWz/docker-monitoring"
+        }
+      ],
+      "options": {},
+      "targets": [
+        {
+          "aggregation": "Last",
+          "alias": "CPU",
+          "crit": 20,
+          "decimals": 2,
+          "displayAliasType": "Always",
+          "displayType": "Regular",
+          "displayValueWithAlias": "Warning / Critical",
+          "expr": "rate(container_cpu_user_seconds_total{image=\"prometheus_grafana\"}[5m]) * 100",
+          "legendFormat": "{{CPU}}",
+          "refId": "A",
+          "units": "none",
+          "valueHandler": "Number Threshold",
+          "warn": 2
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Grafana CPU",
+      "type": "vonage-status-panel"
+    },
+    {
+      "clusterName": "Grafana CPU",
+      "colorMode": "Panel",
+      "colors": {
+        "crit": "rgba(245, 54, 54, 0.9)",
+        "disable": "rgba(128, 128, 128, 0.9)",
+        "ok": "rgba(50, 128, 45, 0.9)",
+        "warn": "rgba(237, 129, 40, 0.9)"
+      },
+      "cornerRadius": 0,
+      "datasource": null,
+      "displayName": "Grafana CPU",
+      "flipCard": false,
+      "flipTime": 5,
+      "fontFormat": "Regular",
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 20,
+        "y": 14
+      },
+      "id": 19,
+      "isAutoScrollOnOverflow": false,
+      "isGrayOnNoData": false,
+      "isHideAlertsOnDisable": false,
+      "isIgnoreOKColors": false,
+      "links": [
+        {
+          "title": "Detailed dashboard",
+          "url": "http://54.82.186.94:3000/d/2zAiyzwWz/docker-monitoring"
+        }
+      ],
+      "options": {},
+      "targets": [
+        {
+          "aggregation": "Last",
+          "alias": "CPU",
+          "crit": 20,
+          "decimals": 2,
+          "displayAliasType": "Always",
+          "displayType": "Regular",
+          "displayValueWithAlias": "Warning / Critical",
+          "expr": "rate(container_cpu_user_seconds_total{image=\"prometheus_grafana\"}[5m]) * 100",
+          "legendFormat": "{{CPU}}",
+          "refId": "A",
+          "units": "none",
+          "valueHandler": "Number Threshold",
+          "warn": 2
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Grafana CPU",
+      "type": "vonage-status-panel"
+    }
+  ],
+  "schemaVersion": 20,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ]
+  },
+  "timezone": "",
+  "title": "Status Page",
+  "uid": "JjhHyzQZz"
+}

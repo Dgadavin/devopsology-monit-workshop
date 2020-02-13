@@ -39,17 +39,47 @@ aws ec2 run-instances --image-id ami-09d069a04349dc3cb --count 1 --instance-type
 Login into it and do:
 
 ```bash
-yum install git docker vim
+yum install -y git docker vim
 sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+service docker start
 docker-compose --version
 ```
 
-After please clone our `devopsology-mon-workshop` repo
+After please clone our `devopsology-monit-workshop` repo
 
 ```bash
-git clone https://github.com/Dgadavin/devopsology-mon-workshop.git
-cd devopsology-mon-workshop/monitoring/prometheus
+git clone https://github.com/Dgadavin/devopsology-monit-workshop.git
+cd devopsology-monit-workshop/monitoring/prometheus
 docker-compose up
 ```
+
+## Grafana setup Telegram alert notification
+Save this json to telegram.json file
+
+```json
+{
+  "name": "Telegram",
+  "type": "telegram",
+  "isDefault": false,
+  "sendReminder": true,
+  "disableResolveMessage": false,
+  "frequency": "15m",
+  "settings": {
+    "autoResolve": true,
+    "bottoken": "905329307:AAFhAYD1cj9VxC3SWa_1_NWUy7BNHE5041w",
+    "chatid": "-1001497391700",
+    "httpMethod": "POST",
+    "uploadImage": true
+  }
+}
+```
+
+```bash
+curl -XPOST -H "Content-Type:application/json" http://admin:12345@54.82.186.94:3000/api/alert-notifications -d @telegram.json
+```
+
+## Grafana dashboard builder
+
+Please clone the repo https://github.com/jakubplichta/grafana-dashboard-builder.git
