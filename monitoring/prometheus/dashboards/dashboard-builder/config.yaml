@@ -1,0 +1,4 @@
+grafana:
+  host: http://54.82.186.94:3000
+  username: admin
+  password: 12345

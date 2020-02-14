@@ -83,3 +83,35 @@ curl -XPOST -H "Content-Type:application/json" http://admin:12345@54.82.186.94:3
 ## Grafana dashboard builder
 
 Please clone the repo https://github.com/jakubplichta/grafana-dashboard-builder.git
+
+```bash
+sudo pip install virtualenv
+virtualenv venv
+source venv/bin/activate
+python setup.py install
+cd ../devopsology-monit-workshop/monitoring/prometheus/dashboard-builder
+# Please add to config.yaml your Grafana server IP
+grafana-dashboard-builder -c config.yaml -p dashboard-builder.yaml --exporter grafana
+```
+
+## Opsgenie
+
+###Create an alert with API
+
+Save this json to alert.json file
+
+```json
+{
+    "message": "[P0][SALES] Test message with only team",
+    "responders": [
+        {
+            "name": "ops_team",
+            "type": "team"
+        }
+    ]
+}
+```
+
+```bash
+curl -XPOST -H "Content-Type:application/json" -H "Authorization:GenieKey YOUR_KEY" -d @alert.json https://api.opsgenie.com/v2/alerts
+```

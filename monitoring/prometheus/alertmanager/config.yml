@@ -1,8 +1,8 @@
- route:
-     receiver: 'opsgenie'
+route:
+  receiver: opsgenie
 
- receivers:
-    - name: 'opsgenie'
-        opsgenie_configs:
-            - send_resolved: true
-              api_key: '79d634a4-24f9-4571-907f-346698862cf3'
+receivers:
+- name: opsgenie
+  opsgenie_configs:
+  - api_key: 91253646-3caf-4b7c-a8e2-9a974bbcdae8
+    send_resolved: true

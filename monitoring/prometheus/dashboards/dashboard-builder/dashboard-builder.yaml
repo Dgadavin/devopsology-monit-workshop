@@ -1,0 +1,86 @@
+---
+- name: Example Prometheus project
+  project:
+    dashboards:
+    - prometheus-overview
+
+- default-dashboard: &default-dashboard
+    time_options: [1h, 6h, 12h, 24h, 2d, 7d, 14d, 30d]
+    refresh_intervals: [5m, 15m, 30m, 1h]
+    time:
+      from: now-2d
+      to: now
+
+- name: prometheus-overview
+  dashboard:
+    title: Prometheus Overview
+    tags:
+    - prometheus
+    - dahvoard-builder
+    - devopsology
+    <<: *default-dashboard
+    templates:
+    - datasource-template:
+        query: prometheus
+    - query:
+        datasource: $datasource
+        name: namespace
+        query: label_values(kube_namespace_labels, namespace)
+    - query:
+        datasource: $datasource
+        name: pod
+        query: label_values(kube_pod_labels{namespace="$namespace"},pod)
+    - interval-template:
+        name: interval
+        current: auto
+        auto:
+          count: 500
+          min: 10s
+        options:
+        - 1m
+        - 2m
+        - 3m
+        - 5m
+        - 10m
+        - 30m
+        - 1h
+        - 6h
+        - 12h
+        - 1d
+    rows:
+    - row:
+        panels:
+        - single-stat:
+            span: 2
+            title: Grafana CPU
+            datasource: $datasource
+            targets:
+            - prometheus-target:
+                expr: 'rate(container_cpu_user_seconds_total{image="prometheus_grafana"}[5m]) * 100'
+    - row:
+        panels:
+        - graph:
+            span: 6
+            title: "Node Mermory"
+            datasource: $datasource
+            yaxes:
+            - yaxis:
+                format: bytes
+            targets:
+            - prometheus-target:
+                expr: 'sum(node_memory_MemTotal_bytes) - sum(node_memory_MemAvailable_bytes)'
+                legendFormat: Used Memory
+            - prometheus-target:
+                expr: "sum(node_memory_MemAvailable_bytes)"
+                legendFormat: Available Memory
+        - graph:
+            span: 6
+            title: "Container Memory Usage"
+            datasource: $datasource
+            yaxes:
+            - yaxis:
+                format: bytes
+            targets:
+            - prometheus-target:
+                expr: 'container_memory_max_usage_bytes{image!=""}'
+                legendFormat: Memory
