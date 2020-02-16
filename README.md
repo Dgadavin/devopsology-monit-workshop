@@ -55,6 +55,26 @@ cd devopsology-monit-workshop/monitoring/prometheus
 docker-compose up
 ```
 
+## Setup instance for auto-discovery
+
+```bash
+export VPC_ID=$(aws ec2 describe-vpcs --filters "Name=isDefault, Values=true" --query 'Vpcs[*].{id:VpcId}' --output text --region us-east-1)
+export PROM_SG=$(aws ec2 create-security-group --description "discovery server" --vpc-id $VPC_ID --group-name "auto-discovery-sg" --region us-east-1 --output text)
+aws ec2 authorize-security-group-ingress --group-id $PROM_SG --protocol tcp --port 0-65000 --cidr 0.0.0.0/0 --region us-east-1
+aws ec2 run-instances --image-id ami-09d069a04349dc3cb --count 1 --instance-type t3.micro --key-name devopsology --security-group-ids $PROM_SG --region us-east-1
+```
+
+Please create IAM role for EC2 and attach `AmazonEC2ReadOnlyAccess` policy.
+**Attach this role to Prometheus server EC2 instance**
+
+Login to instance and run `node-exporter`
+
+```bash
+docker run -d -p 9100:9100 prom/node-exporter
+```
+
+Got to Prometheus UI and verify that in `targets` and `service-discovery` tab appear new `node-exporter`
+
 ## Grafana setup Telegram alert notification
 Save this json to telegram.json file
 
